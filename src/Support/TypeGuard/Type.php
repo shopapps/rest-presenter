@@ -11,14 +11,14 @@ use TypeError;
  *
  * @template TVariable
  */
-final readonly class Type
+final class Type
 {
     /**
      * Create a new type instance.
      *
      * @param  TVariable  $variable
      */
-    public function __construct(private mixed $variable)
+    public function __construct(private readonly mixed $variable)
     {
         //
     }
@@ -104,7 +104,7 @@ final readonly class Type
      *
      * @phpstan-assert-if-true null $this->variable
      */
-    public function asNull(): null
+    public function asNull(): mixed
     {
         if (! is_null($this->variable)) {
             throw new TypeError('Variable is not a [null].');
