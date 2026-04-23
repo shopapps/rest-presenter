@@ -10,12 +10,12 @@ use XtendPackages\RESTPresenter\Concerns\InteractsWithPresenter;
 use XtendPackages\RESTPresenter\Contracts\Presentable;
 use XtendPackages\RESTPresenter\Data\Response\DefaultResponse;
 
-final readonly class ResourceDefaultPresenter implements Presentable
+final class ResourceDefaultPresenter implements Presentable
 {
     use InteractsWithPresenter;
 
     public function __construct(
-        private ?Model $model,
+        private readonly ?Model $model,
     ) {}
 
     public function transform(): Data
