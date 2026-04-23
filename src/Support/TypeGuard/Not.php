@@ -11,14 +11,14 @@ use TypeError;
  *
  * @template TVariable
  */
-final readonly class Not
+final class Not
 {
     /**
      * Create a new type instance.
      *
      * @param  TVariable  $variable
      */
-    public function __construct(private mixed $variable)
+    public function __construct(private readonly mixed $variable)
     {
         //
     }
